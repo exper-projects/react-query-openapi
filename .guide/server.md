@@ -16,3 +16,5 @@
 
 - `openapi-generator-cli` requires Java installation
 - https://www.oracle.com/java/technologies/downloads/?er=221886#java23
+
+## Install orval

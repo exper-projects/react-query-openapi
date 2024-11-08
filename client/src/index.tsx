@@ -1,5 +1,6 @@
 import * as React from "react";
 
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { Toast } from "@usy-ui/base";
 import * as ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -22,9 +23,13 @@ const router = createBrowserRouter([
   },
 ]);
 
+const client = new QueryClient();
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Toast />
-    <RouterProvider router={router} />
+    <QueryClientProvider client={client}>
+      <Toast />
+      <RouterProvider router={router} />
+    </QueryClientProvider>
   </React.StrictMode>
 );

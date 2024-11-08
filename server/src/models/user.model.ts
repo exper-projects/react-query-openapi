@@ -11,8 +11,11 @@ export class UserModel {
   @Prop({ type: String, required: true })
   name: string;
 
-  @Prop({ type: Number, required: true })
+  @Prop({ type: Number, required: false })
   age: number;
+
+  @Prop({ type: Date, required: false })
+  dateOfBirth: Date;
 }
 
 export const UserSchema = SchemaFactory.createForClass(UserModel);
